@@ -11,12 +11,14 @@ const CreatePet = () => {
             width: "35rem",
             padding: "1rem",
             elevation: "25",
-            variant: "outlined"
+            variant: "outlined",
+            backgroundColor:"#50C878",
         },
         margin:{
             marginLeft: "10px",
             marginTop: "5px",
-            marginBottom: "5px"
+            marginBottom: "5px",
+            // backgroundColor:"#f3f3f3"
         }
     }
     //Sending the information to the display
@@ -60,24 +62,24 @@ const CreatePet = () => {
             <Paper elevation={4} style={styles.paper}>
                 <div style={{display: "flex", justifyContent: "space-between"}}>
                     <h1>Pet Shelter</h1>
-                    <Link to="/">back to home</Link>
+                    <Link to="/"><button className="button">Back to home</button></Link>
                 </div>
                 <h4>Know a pet needing a home?</h4>
                 <form onSubmit={onSubmitHandler}>
                     <FormControl>
-                        <TextField name="petName" onChange={onChangeHandler} id="outlined-basic-margin" label="Pet Name:" variant="outlined" style={styles.margin} />
+                        <TextField name="petName" onChange={onChangeHandler} id="outlined-basic-margin" color="secondary" label="Pet Name:" variant="filled" style={styles.margin} />
                         {beError.petName ? <span>{beError.petName.message}</span> : null}
-                        <TextField name="petType" onChange={onChangeHandler} id="outlined-basic-margin" label="Pet Type:" variant="outlined" style={styles.margin}/>
+                        <TextField name="petType" onChange={onChangeHandler} id="outlined-basic-margin" color="secondary" label="Pet Type:" variant="filled" style={styles.margin}/>
                         {beError.petType ? <span>{beError.petType.message}</span> : null}
-                        <TextField name="petDescription" onChange={onChangeHandler} id="outlined-basic-margin" label="Pet Description:" variant="outlined" style={styles.margin}/>
+                        <TextField name="petDescription" onChange={onChangeHandler} id="outlined-basic-margin" color="secondary" label="Pet Description:" variant="filled" style={styles.margin}/>
                         {beError.petType ? <span>{beError.petDescription.message}</span> : null}
                         <button value="submit" className='button'>Add Pet</button>
                     </FormControl>
                     <FormControl>
                         <h4 style={{marginLeft: "10px",marginTop: "2px",marginBottom: "2px"}}> Skills (Optional)</h4>
-                        <TextField name="petSkill1" onChange={onChangeHandler} id="outlined-basic-margin" label="Skill 1:" variant="outlined" style={styles.margin}/>
-                        <TextField name="petSkill2" onChange={onChangeHandler} id="outlined-basic-margin" label="Skill 2:" variant="outlined" style={styles.margin}/>
-                        <TextField name="petSkill3" onChange={onChangeHandler} id="outlined-basic-margin" label="Skill 2:" variant="outlined" style={styles.margin}/>
+                        <TextField name="petSkill1" onChange={onChangeHandler} id="outlined-basic-margin" color="secondary" label="Skill 1:" variant="filled" style={styles.margin}/>
+                        <TextField name="petSkill2" onChange={onChangeHandler} id="outlined-basic-margin" color="secondary" label="Skill 2:" variant="filled" style={styles.margin}/>
+                        <TextField name="petSkill3" onChange={onChangeHandler} id="outlined-basic-margin" color="secondary" label="Skill 2:" variant="filled" style={styles.margin}/>
                     </FormControl>
                 </form>
             </Paper>

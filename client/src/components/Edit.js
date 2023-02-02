@@ -7,15 +7,16 @@ import { useNavigate,Link,useParams } from 'react-router-dom';
 const Edit = () => {
     const styles = {
         paper: {
-            width: "30rem",
-            height: "30rem",
+            width: "35rem",
             padding: "1rem",
             elevation: "25",
-            variant: "outlined"
+            variant: "outlined",
+            backgroundColor:"#50C878",
         },
         margin:{
             marginLeft: "10px",
-            marginTop: "5px"
+            marginTop: "5px",
+            marginBottom: "5px",
         }
     }
     //Sending the information to the display
@@ -67,21 +68,21 @@ const Edit = () => {
             <Paper elevation={4} style={styles.paper}>
                 <div style={{display: "flex", justifyContent: "space-between"}}>
                 <h1>Pet Shelter</h1>
-                <Link to="/">back to home</Link>
+                <Link to="/"><button className="button">Back to home</button></Link>
                 </div>
                 <h4>Edit {name}</h4>
                 <form onSubmit={onSubmitHandler}>
                     <FormControl>
-                        <TextField name="petName" value={pet.petName} onChange={onChangeHandler} id="outlined-basic-margin" label="Pet Name:" variant="outlined" style={styles.margin} />
-                        <TextField name="petType" value={pet.petType} onChange={onChangeHandler} id="outlined-basic-margin" label="Pet Type:" variant="outlined" style={styles.margin}/>
-                        <TextField name="petDescription" value={pet.petDescription} onChange={onChangeHandler} id="outlined-basic-margin" label="Pet Description:" variant="outlined" style={styles.margin}/>
+                        <TextField name="petName" value={pet.petName} onChange={onChangeHandler} id="outlined-basic-margin" color="secondary" label="Pet Name:" variant="filled" style={styles.margin} />
+                        <TextField name="petType" value={pet.petType} onChange={onChangeHandler} id="outlined-basic-margin" color="secondary" label="Pet Type:" variant="filled" style={styles.margin}/>
+                        <TextField name="petDescription" value={pet.petDescription} onChange={onChangeHandler} id="outlined-basic-margin" color="secondary" label="Pet Description:" variant="filled" style={styles.margin}/>
                         <button value="submit" className='button'>Edit Pet</button>
                     </FormControl>
                     <FormControl>
                         <h4 style={{marginLeft: "10px", marginTop: "2px",marginBottom: "2px"}}> Skills (Optional)</h4>
-                        <TextField name="petSkill1" value={pet.petSkill1} onChange={onChangeHandler} id="outlined-basic-margin" label="Skill 1:" variant="outlined" style={styles.margin}/>
-                        <TextField name="petSkill2" value={pet.petSkill2} onChange={onChangeHandler} id="outlined-basic-margin" label="Skill 2:" variant="outlined" style={styles.margin}/>
-                        <TextField name="petSkill3" value={pet.petSkill3} onChange={onChangeHandler} id="outlined-basic-margin" label="Skill 2:" variant="outlined" style={styles.margin}/>
+                        <TextField name="petSkill1" value={pet.petSkill1} onChange={onChangeHandler} id="outlined-basic-margin" color="secondary" label="Skill 1:" variant="filled" style={styles.margin}/>
+                        <TextField name="petSkill2" value={pet.petSkill2} onChange={onChangeHandler} id="outlined-basic-margin" color="secondary" label="Skill 2:" variant="filled" style={styles.margin}/>
+                        <TextField name="petSkill3" value={pet.petSkill3} onChange={onChangeHandler} id="outlined-basic-margin" color="secondary" label="Skill 2:" variant="filled" style={styles.margin}/>
                     </FormControl>
                 </form>
             </Paper>

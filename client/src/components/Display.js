@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const Display = () => {
     const styles = {
         paper: {
+            backgroundColor:"#50C878",
             margin: "25px",
             padding: "1rem",    
         }
@@ -29,7 +30,7 @@ const Display = () => {
             <Paper elevation={4} style={styles.paper} >
                 <div style={{display: "flex", justifyContent: "space-between"}}>
                     <h1>Pet Shelter</h1>
-                    <Link to={"/pets/new"}>add a pet to the shelter</Link>
+                    <Link to={"/pets/new"}><button className="button">Add a pet to the shelter</button></Link>
                 </div>
                 <h3>This pets are looking for a good home</h3>
                 <TableContainer component={Paper}>
@@ -46,7 +47,7 @@ const Display = () => {
                                 <TableRow key={index} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                                     <TableCell align="left" scope="row">{pet.petName}</TableCell>
                                     <TableCell align="left">{pet.petType}</TableCell>
-                                    <TableCell align='left'><Link to={`/pets/${pet._id}`}>details</Link>|<Link to={`/pets/edit/${pet._id}`}>edit</Link></TableCell>
+                                    <TableCell align='left'><Link to={`/pets/${pet._id}`}>Details</Link>|<Link to={`/pets/edit/${pet._id}`}>Edit</Link></TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>

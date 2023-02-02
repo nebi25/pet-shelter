@@ -1,9 +1,11 @@
+
 .App {
   margin: auto;
   /* width: 100%; */
   padding: 10px;
   display: flex;
   justify-content: center;
+
 }
 
 .display{
@@ -43,4 +45,11 @@ span{
   font-size: 0.8rem;
   margin-left: 10px;
   margin-bottom: 5px;
+}
+body{
+  background-image: url("pictures/pic1.jpg");
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size: 100%;
+
 }

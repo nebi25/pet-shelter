@@ -9,6 +9,7 @@ import Details from './components/Details';
 function App() {
   return (
     <div className="App">
+      <div class="img-area"></div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Display/>}/>  

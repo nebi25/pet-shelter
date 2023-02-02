@@ -7,7 +7,13 @@ import "../App.css"
 
 const Details = () =>{
     const [count, setCount] = useState(0)
-
+    const styles = {
+        paper: {
+            backgroundColor:"#50C878",
+            margin: "25px",
+            padding: "1rem",    
+        }
+    }
     const navigate = useNavigate();
     const [pet, setPet] = useState({
         petName: "",
@@ -46,9 +52,9 @@ const Details = () =>{
 
     return(
         <div className="display">
-            <Paper elevation={4}>
+            <Paper elevation={4} style={styles.paper} >
                 <div style={{display: "flex", justifyContent: "space-between", padding: "10px"}}>
-                    <h1>Pet Shelter</h1><Link to={'/'}>back to home</Link>
+                    <h1 style={{marginRight:"100px"}}>Pet Shelter</h1><Link to="/"><button className="button">Back to home</button></Link>
                 </div>
                 <div style={{display: "flex", justifyContent: "space-between", padding: "10px",marginLeft: "10px",marginTop: "-20px"}}>
                     <h5 style={{marginTop: "6px"}}>Details about: {pet.petName}</h5>
@@ -65,10 +71,6 @@ const Details = () =>{
                     <p>{pet.petDescription}</p>
                     <p>{pet.petSkill1}<br/>{pet.petSkill2}<br/>{pet.petSkill3}</p>
                 </FormControl><br/>
-                <div style={{display: "flex", padding: "10px"}}>
-                    <button style={{margin: "15px"}} onClick={likeHandler} id="btn">Like {pet.petName}</button>
-                    <p>{count} Like(s)</p>
-                </div>
                 </div>
             </Paper>
         </div>
